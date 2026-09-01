@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatima Waheed — SEO & Digital Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F4F5F6;
+    --paper: #FFFFFF;
+    --ink: #1B2430;
+    --ink-soft: #56616F;
+    --ink-faint: #8A93A0;
+    --accent: #1F4E79;
+    --accent-soft: #DCE6EE;
+    --line: #E1E4E8;
+    --heading: 'Libre Franklin', Arial, sans-serif;
+    --body: 'Inter', -apple-system, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover{ color: var(--ink); }
+
+  .layout{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 28px 80px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  /* --- sidebar --- */
+  .sidebar{
+    position: sticky;
+    top: 48px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px 28px;
+  }
+
+  .sidebar-name{
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 0 0 6px;
+  }
+
+  .sidebar-role{
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 22px;
+  }
+
+  .sidebar-bio{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin: 0 0 26px;
+    line-height: 1.65;
+  }
+
+  .sidebar-block{
+    margin-bottom: 26px;
+  }
+
+  .sidebar-block:last-child{
+    margin-bottom: 0;
+  }
+
+  .sidebar-label{
+    font-family: var(--heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+  }
+
+  .skill-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-pill{
+    font-size: 0.82rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-weight: 500;
+  }
+
+  .contact-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  .contact-list a{
+    display: block;
+    word-break: break-word;
+    color: var(--ink);
+  }
+  .contact-list a:hover{ color: var(--accent); }
+  .contact-list span{
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    margin-bottom: 2px;
+  }
+
+  /* --- main --- */
+  .main-intro{
+    margin-bottom: 44px;
+  }
+  .main-intro h1{
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .main-intro p{
+    color: var(--ink-soft);
+    max-width: 68ch;
+    margin: 0;
+  }
+
+  .project{
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+  }
+
+  .project-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .project-title{
+    font-family: var(--heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .project-tag{
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .project-desc{
+    color: var(--ink-soft);
+    max-width: 66ch;
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+  }
+
+  .project ul{
+    margin: 0;
+    padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+  }
+  .project li{ margin-bottom: 6px; }
+  .project li::marker{ color: var(--accent); }
+
+  .project-links{
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    list-style: none;
+    padding-left: 0;
+  }
+  .project-links li{
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  .project-links li:last-child{ margin-bottom: 0; }
+  .project-links a{ font-weight: 500; }
+  .project-links .link-desc{
+    display: block;
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    margin-top: 2px;
+  }
+
+  footer{
+    margin-top: 40px;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 820px){
+    .layout{
+      grid-template-columns: 1fr;
+      padding: 32px 20px 60px;
+      gap: 28px;
+    }
+    .sidebar{ position: static; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <p class="sidebar-name">Fatima Waheed</p>
+    <p class="sidebar-role">SEO & Digital Marketing</p>
+    <p class="sidebar-bio">Digital marketing and SEO enthusiast with hands-on experience in keyword research, content writing, on-page optimization, and social media marketing.</p>
+
+    <div class="sidebar-block">
+      <p class="sidebar-label">Skills</p>
+      <div class="skill-list">
+        <span class="skill-pill">SEO</span>
+        <span class="skill-pill">Keyword Research</span>
+        <span class="skill-pill">Content Writing</span>
+        <span class="skill-pill">On-Page Optimization</span>
+        <span class="skill-pill">Social Media Marketing</span>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <p class="sidebar-label">Contact</p>
+      <div class="contact-list">
+        <a href="mailto:fatimawaheedkhan76@gmail.com"><span>Email</span>fatimawaheedkhan76@gmail.com</a>
+        <a href="https://www.linkedin.com/in/fatima-waheed-790174430/" target="_blank" rel="noopener"><span>LinkedIn</span>linkedin.com/in/fatima-waheed-790174430</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="main-intro">
+      <h1>Work</h1>
+      <p>Practical SEO and marketing work spanning blog writing, keyword research, on-page optimization, and social media content.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h2 class="project-title">SEO Blog Writing &amp; Publishing</h2>
+        <span class="project-tag">Content · SEO</span>
+      </div>
+      <p class="project-desc">End-to-end blog production, from research to a live, published article. I plan each post around a target keyword, structure it for readability and search, and take it through to publishing on the website.</p>
+      <ul>
+        <li>Researched topics and built an outline around primary and secondary keywords</li>
+        <li>Wrote full-length, SEO-optimized blog articles</li>
+        <li>Structured content with clear, scannable headings, meta description, and an FAQ section</li>
+        <li>Published completed articles directly on the website</li>
+      </ul>
+      <ul class="project-links">
+        <li>
+          <a href="https://allsafeshop.com/blogs/news/how-to-wear-a-kilt-a-step-by-step-guide-for-beginners" target="_blank" rel="noopener">How to Wear a Kilt: A Step-by-Step Guide for Beginners</a>
+          <span class="link-desc">A how-to guide targeting kilt-wearing and Highland dress keywords, built around a numbered checklist and FAQ section.</span>
+        </li>
+        <li>
+          <a href="https://allsafeshop.com/blogs/news/how-to-measure-for-a-kilt-find-your-perfect-scottish-kilt-size" target="_blank" rel="noopener">How to Measure for a Kilt: Find Your Perfect Scottish Kilt Size</a>
+          <span class="link-desc">A sizing guide structured around a step-by-step measuring process and a size-chart explainer, targeting kilt-sizing search terms.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h2 class="project-title">Keyword Research &amp; Content Optimization</h2>
+        <span class="project-tag">SEO</span>
+      </div>
+      <p class="project-desc">Finding the right keywords before writing a single word, then using them to sharpen the content itself rather than just stuffing them in.</p>
+      <ul>
+        <li>Identified primary and secondary keywords for target topics</li>
+        <li>Mapped keywords to headings and body content naturally</li>
+        <li>Revised existing content for stronger keyword alignment and clarity</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h2 class="project-title">On-Page SEO</h2>
+        <span class="project-tag">SEO</span>
+      </div>
+      <p class="project-desc">The technical and structural side of getting a page ready to be found: titles, descriptions, and headings that work for both readers and search engines.</p>
+      <ul>
+        <li>Wrote meta titles and meta descriptions</li>
+        <li>Applied SEO-friendly heading structures (H1–H3)</li>
+        <li>Optimized on-page content for target keywords</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h2 class="project-title">Social Media Content</h2>
+        <span class="project-tag">Social Media</span>
+      </div>
+      <p class="project-desc">Content built for the platform it's posted on, from captions to hashtag research, with an eye on brand awareness and engagement.</p>
+      <ul>
+        <li>Wrote captions and content for Instagram, Facebook, and LinkedIn</li>
+        <li>Researched hashtags to support reach and discoverability</li>
+        <li>Supported content planning for brand awareness and engagement goals</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h2 class="project-title">Digital Marketing Projects</h2>
+        <span class="project-tag">Digital Marketing</span>
+      </div>
+      <p class="project-desc">Broader marketing tasks that sit alongside SEO and social content work.</p>
+      <ul>
+        <li>Supported digital marketing tasks across content and channel planning</li>
+        <li>Applied SEO and content principles across different project briefs</li>
+      </ul>
+    </div>
+
+    <footer>Fatima Waheed — SEO & Digital Marketing Portfolio</footer>
+  </main>
+
+</div>
+
+</body>
+</html>
